@@ -9,6 +9,5 @@ ADD package-lock.json .
 RUN npm i --production
 
 ADD bot bot
-ADD ressources ressources
 
 CMD ["node","bot"]
