@@ -8,9 +8,13 @@ const penalityId = '803702152231911491'
 const layorId = '295632286555045888'
 
 const whiteList = [
+  '$fc',
   '$m','$ma','$mg',
   '$h','$hg','$ha',
   '$w','$wa','$wg',
+  '$m$m','$ma$ma','$mg$mg',
+  '$h$h','$hg$hg','$ha$ha',
+  '$w$w','$wa$wa','$wg$wg',
   '$marry','$marrya','$marryg',
   '$husbando','$husbandog','$husbandoa',
   '$waifu','$waifua','$waifug',
@@ -42,9 +46,11 @@ const onMessage = (db)=> (async (msg)=>{
 
   if(msg.content==='!showPenality'){
     const penality = db.get('penality') || {}
-    const field = Object.keys(penality)
-      .filter(userId=>penality[userId])
-      .map((userId) => (msg.guild.member(userId).displayName) + ' : ' + penality[userId])
+    const field = (await Promise.all(
+        Object.keys(penality)
+        .filter(userId=>penality[userId])
+        .map(userId=>msg.guild.members.fetch(userId))))
+      .map((user) => (user.displayName) + ' : ' + penality[user.id])
       .join('\n')
     const embed = new Discord.MessageEmbed()
       .setColor(0xFFAA00)
