@@ -19,7 +19,7 @@ const whiteList = [
   '$husbando','$husbandog','$husbandoa',
   '$waifu','$waifua','$waifug',
   '$rt','$rtu',
-  '$rolls','$daily','$dk','$dailykakera','$dailyk','$ga','$ta','$ya','$ua','$ja','$na','$ba','$va','$hq','$hz','$hs','$g','$t','$y','$u','$j','$n','$b','$hy','$ht','$hh','$hr','$hf','$hv','$hb','$q','$s','$x','$wz','$ws','$wq','$qa','$sa','$xa','$wf','$wr','$wt','$wy','$wh','$wn','$wb','$wv','$qg','$sg','$xg','$p','$o','$l','$:','$!','$ù','$^','$mz','$ms','$mq','$oa','$pa','$^a','$ùa','$!a','$:a','$;a','$la','$oa','$pa','$mf','$mr','$mt','$my','$mh','$mb','$mv'
+  '$rolls','$daily','$dk','$dailykakera','$dailyk','$ga','$ta','$ya','$ua','$ja','$na','$ba','$va','$hq','$hz','$hs','$g','$t','$y','$u','$j','$n','$b','$hy','$ht','$hh','$hr','$hf','$hv','$hb','$q','$s','$x','$wz','$ws','$wq','$qa','$sa','$xa','$wf','$wr','$wt','$wy','$wh','$wn','$wb','$wv','$qg','$sg','$xg','$o','$l','$:','$!','$ù','$^','$mz','$ms','$mq','$oa','$pa','$^a','$ùa','$!a','$:a','$;a','$la','$oa','$pa','$mf','$mr','$mt','$my','$mh','$mb','$mv'
 ]
 
 
@@ -57,6 +57,7 @@ const onMessage = (db)=> (async (msg)=>{
       .addField("Amendes :",field.length ? field : "Aucune amende")
     msg.channel.send(embed)
   }
+
 })
 
 
